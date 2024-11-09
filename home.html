@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPU MAP</title>
+    <link href='https://fonts.googleapis.com/css?family=Bubblegum Sans' rel='stylesheet'>
+    <style>
+        body{
+            font-family: 'Arial';
+            background-image: url(./way.gif);
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+        }
+        button{
+            margin: 20px;
+            width: 80%;
+            height: 100px;
+            border: solid 5px;
+            border-radius: 100px;
+            background-color: rgb(255, 216, 172);
+            font-family: 'Bubblegum Sans';
+            font-size: 15px;
+        }
+        ul {
+            list-style: none;
+        }   
+        .search{
+            position: relative;
+            top: 470px;
+            background-image: url(./2.png);
+            background-size: 100vw 100vh;
+            border-top: 10px solid rgb(255, 163, 58);
+            
+        }
+        a{
+            color: black;
+        }
+        input{
+            width: 500px;
+            height: 40px;
+            border-radius: 30px;
+            border: solid 5px;
+            font-size: 20px;
+            border: none;
+        }
+        select{
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            border: none;
+        }
+        option{
+            font-size: 20px;
+        }
+        .mser{
+            width: 700px;
+            height: 50px;
+            border-radius: 30px;
+            border: solid 5px;
+            background-color: white;
+            margin-top: 60px;
+        }
+        input:focus,select:focus {
+            outline: none;
+            border: none;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        .nsub{
+            display: inline;
+            margin-left: 40px;
+            float: left;
+        }
+        .sub{
+            display: inline-block;
+            font-size: 30px;
+        }
+        .scroll{
+            margin: 20px;
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 100px;
+            background-color: rgb(255, 162, 55);
+            color: white;
+            position: relative;
+            top: 10px;
+            transition: .2s;
+            font-size: 20px;
+        }
+        .scroll:hover{
+            transform: scale(1.1);
+        }
+        #shead{
+            background-color: rgb(252, 142, 101);
+            width: 100vw;
+            height: 100px;
+            position: fixed;
+            display: flex;
+            justify-self: center;
+            z-index: 1000;
+            top: 0px;
+            left: 0px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            display: block;
+            visibility: hidden;
+        }
+        #shead.header-visible{
+            opacity: 1;
+            visibility: visible;
+        }
+        body.load{
+            background-image: url(./loading.gif);
+            overflow: hidden;
+            background-size: 100vw 700px;
+            
+        }
+        .load button{
+            visibility: hidden;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header id="shead">
+        <div><a href="#top" style="font-size: 20px;position: relative;top: 20px;margin-left: 30px;color: rgb(255, 255, 255);">Home</a><a href="contact.html" style="font-size: 20px;position: relative;top: 20px;margin-left: 30px;color: rgb(255, 255, 255);">Contact</a><a href="about.html" style="font-size: 20px;position: relative;top: 20px;margin-left: 30px;color: rgb(255, 255, 255);">About</a><img src="./logo.png" width="200px" height="100px" style="float: right;margin-right: 100px;"></div>
+    </header>
+    <center>
+        <div id="top">
+        <button class="scroll" onclick="window.location.href='#ser';">Search</button>
+        <button class="scroll" onclick="window.location.href='about.html';" style="float: right;">About</button>
+        <button class="scroll" onclick="window.location.href='contact.html';" style="float: left;" >Contact</button>
+        </div>
+    </center>
+    <div  class="search" id="ser">
+    <center>
+        <div class="mser">
+            <div class="input"  style="display: inline">
+                <input type=number class="no" placeholder="🔍Enter Block No." onkeyup="noFunction()">
+            </div>
+            <div style="display: inline">
+            <select class="type" onclick="inputType()" required >
+                <option class="bno" value="bno">Block No.</option>
+                <option class="bna" value="bna">Block Name</option>
+            </select><br>
+            </div>
+        </div>
+        <ul id="myUL">
+            <li><a href="location1.html"><button><h1 class="nsub">Block 1</h1><p class="sub">School Of Fashion Designing</p></button></a></li>
+            <li><a href="location2.html"><button><h1 class="nsub">Block 2</h1><p class="sub">Drinking Water</p></button></a></li>
+            <li><a href="location3.html"><button><h1 class="nsub">Block 3</h1><p class="sub">Daycare Centre</p></button></a></li>
+            <li><a href="location4.html"><button><h1 class="nsub">Block 4</h1><p class="sub">Institute of International Studies</p></button></a></li>
+            <li><a href="location5.html"><button><h1 class="nsub">Block 5</h1><p class="sub">Institute of Pharmacy</p></button></a></li>
+            <li><a href="location6.html"><button><h1 class="nsub">Block 6</h1><p class="sub">School of Architecture</p></button></a></li>
+            <li><a href="location7.html"><button><h1 class="nsub">Block 7</h1><p class="sub">Product and Industrial Block</p></button></a></li>
+            <li><a href="location8.html"><button><h1 class="nsub">Block 8</h1><p class="sub">Uni Hospital</p></button></a></li>
+            <li><a href="location9.html"><button><h1 class="nsub">Block 9</h1><p class="sub">Girls Hostel 1</p></button></a></li>
+            <li><a href="location10.html"><button><h1 class="nsub">Block 10</h1><p class="sub">Girls Hostel 2</p></button></a></li>
+            <li><a href="location11.html"><button><h1 class="nsub">Block 11</h1><p class="sub">Girls Hostel 3</p></button></a></li>
+            <li><a href="location12.html"><button><h1 class="nsub">Block 12</h1><p class="sub">Girls Hostel 4</p></button></a></li>
+            <li><a href="location13.html"><button><h1 class="nsub">Block 13</h1><p class="sub">Division of Student Affairs</p></button></a></li>
+            <li><a href="location14.html"><button><h1 class="nsub">Block 14</h1><p class="sub">School of Business</p></button></a></li>
+            <li><a href="location15.html"><button><h1 class="nsub">Block 15</h1><p class="sub">Uni Mall</p></button></a></li>
+            <li><a href="location16.html"><button><h1 class="nsub">Block 16</h1><p class="sub">School of Hotel Management</p></button></a></li>
+            <li><a href="location17.html"><button><h1 class="nsub">Block 17</h1><p class="sub">Uni Mall-II</p></button></a></li>
+            <li><a href="location18.html"><button><h1 class="nsub">Block 18</h1><p class="sub">Department of Education and Physical Education</p></button></a></li>
+            <li><a href="location19.html"><button><h1 class="nsub">Block 19</h1><p class="sub">Unipolis</p></button></a></li>
+            <li><a href="location20.html"><button><h1 class="nsub">Block 20</h1><p class="sub">School of Law</p></button></a></li>
+            <li><a href="location21.html"><button><h1 class="nsub">Block 21</h1><p class="sub">Girls Hostel 5</p></button></a></li>
+            <li><a href="location22.html"><button><h1 class="nsub">Block 22</h1><p class="sub">Girls Hostel 6</p></button></a></li>
+            <li><a href="location23.html"><button><h1 class="nsub">Block 23</h1><p class="sub">Auditorium-I</p></button></a></li>
+            <li><a href="location24.html"><button><h1 class="nsub">Block 24</h1><p class="sub">Auditorium-II</p></button></a></li>
+            <li><a href="location25.html"><button><h1 class="nsub">Block 25</h1><p class="sub">School Of Computing</p></button></a></li>
+            <li><a href="location26.html"><button><h1 class="nsub">Block 26</h1><p class="sub">School Of Computing</p></button></a></li>
+            <li><a href="location27.html"><button><h1 class="nsub">Block 27</h1><p class="sub">School Of Computing</p></button></a></li>
+            <li><a href="location28.html"><button><h1 class="nsub">Block 28</h1><p class="sub">School Of Computing</p></button></a></li>
+            <li><a href="location29.html"><button><h1 class="nsub">Block 29</h1><p class="sub">School Of Computing</p></button></a></li>
+            <li><a href="location30.html"><button><h1 class="nsub">Block 30</h1><p class="sub">Chancellor Office</p></button></a></li>
+            <li><a href="location31.html"><button><h1 class="nsub">Block 31</h1><p class="sub">Division of Admission</p></button></a></li>
+            <li><a href="location32.html"><button><h1 class="nsub">Block 32</h1><p class="sub">Administrative Block</p></button></a></li>
+            <li><a href="location33.html"><button><h1 class="nsub">Block 33</h1><p class="sub">School of Electrical Engineering</p></button></a></li>
+            <li><a href="location34.html"><button><h1 class="nsub">Block 34</h1><p class="sub">School of Electrical Engineering</p></button></a></li>
+            <li><a href="location35.html"><button><h1 class="nsub">Block 35</h1><p class="sub">School of Electrical Engineering</p></button></a></li>
+            <li><a href="location36.html"><button><h1 class="nsub">Block 36</h1><p class="sub">School of Electrical Engineering</p></button></a></li>
+            <li><a href="location37.html"><button><h1 class="nsub">Block 37</h1><p class="sub">Central Library</p></button></a></li>
+            <li><a href="location38.html"><button><h1 class="nsub">Block 38</h1><p class="sub">LPU Startup School</p></button></a></li>
+            <li><a href="location39.html"><button><h1 class="nsub">Block 39</h1><p class="sub">STP</p></button></a></li>
+            <li><a href="location40.html"><button><h1 class="nsub">Block 40</h1><p class="sub">Store</p></button></a></li>
+            <li><a href="location41.html"><button><h1 class="nsub">Block 41</h1><p class="sub">Boys Apartment</p></button></a></li>
+            <li><a href="location42.html"><button><h1 class="nsub">Block 42</h1><p class="sub">Staff Residence</p></button></a></li>
+            <li><a href="location43.html"><button><h1 class="nsub">Block 43</h1><p class="sub">BH-1</p></button></a></li>
+            <li><a href="location44.html"><button><h1 class="nsub">Block 44</h1><p class="sub">BH-2</p></button></a></li>
+            <li><a href="location45.html"><button><h1 class="nsub">Block 45</h1><p class="sub">BH-3</p></button></a></li>
+            <li><a href="location46.html"><button><h1 class="nsub">Block 46</h1><p class="sub">BH-4</p></button></a></li>
+            <li><a href="location47.html"><button><h1 class="nsub">Block 47</h1><p class="sub">BH-5</p></button></a></li>
+            <li><a href="location48.html"><button><h1 class="nsub">Block 48</h1><p class="sub">BH-6</p></button></a></li>
+            <li><a href="location49.html"><button><h1 class="nsub">Block 49</h1><p class="sub">Academic Block</p></button></a></li>
+            <li><a href="location50.html"><button><h1 class="nsub">Block 50</h1><p class="sub">Academic Block</p></button></a></li>
+        </ul>
+        
+        
+    </center>
+</div>
+    <script>
+        function inputType(){
+            let iT=document.querySelector('.type').value;
+            if (iT=='bno'){
+                document.querySelector('.input').innerHTML='<input type=number class="no" placeholder="🔍Enter Block No." onkeyup="noFunction()">'
+            }else{
+                document.querySelector('.input').innerHTML='<input type=text class="name" placeholder="🔍Enter Block Name" id="myInput" onkeyup="nameFunction()">'
+            }
+        }
+        function nameFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('myInput');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("p")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+            } else {
+            li[i].style.display = "none";
+            }
+            }
+        }
+        function noFunction() {
+            var filter=document.querySelector('.no').value.toString().toUpperCase();
+            var li=document.getElementById('myUL').getElementsByTagName('li');
+            for (var i=0;i< li.length;i++){
+                if (li[i].getElementsByTagName("h1")[0].innerText.toUpperCase().indexOf(filter)>-1){
+                    li[i].style.display="";
+                }
+               else{
+                    li[i].style.display="none";
+                }
+
+            }
+        }
+        function scrollHead() {
+    let header = document.getElementById('shead');
+    let want = document.getElementById('myUL');
+    let numb = want.getBoundingClientRect();
+
+    if (numb.top <= 0 && numb.bottom > 0) {
+        header.classList.add('header-visible');
+    } else {
+        header.classList.remove('header-visible');
+    }
+}
+
+window.addEventListener('scroll', scrollHead);
+window.addEventListener('load', scrollHead);
+
+    function loadEnd(){
+        document.querySelector('body').classList.remove('load')
+    }
+    function loadStrt(){
+        document.querySelector('body').classList.add('load');
+        setTimeout(loadEnd,500);
+    }
+window.addEventListener('load', loadStrt);
+
+
+    </script>
+</body>
+</html>
